@@ -6,7 +6,7 @@ public class MoveRaycastTp : MonoBehaviour
 {
     public Transform Player;
     public Camera MainCamera;
-    private float PlayerHeight = 1.8f;
+    private float PlayerHeight = 0f;
 
     void Update()
     {
@@ -23,9 +23,8 @@ public class MoveRaycastTp : MonoBehaviour
         {
             if (hit.collider.gameObject.layer == LayerMask.NameToLayer("Floor"))
                 Player.position = hit.point + Vector3.up * PlayerHeight;
-            else
-                Debug.Log("No tp through walls and doors.");
-
+            /*else
+                Debug.Log("No tp through walls and doors.");*/
         }
     }
 }
